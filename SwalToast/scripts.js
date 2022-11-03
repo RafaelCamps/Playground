@@ -1,32 +1,33 @@
 function toast(title, message = '', icon = 'success', timer = '2500', position = 'top-end') {
   
-  const Toast = Swal.mixin({
-    toast: true,
-    position: position,
-    showConfirmButton: false,
-    timer: timer,
-    showClass: {
-            popup: 'animate__animated animate__fadeInRight'
+    const Toast = Swal.mixin({
+        toast: true,
+        position: position,
+        showConfirmButton: false,
+        timer: timer,
+        showClass: {
+                popup: 'animate__animated animate__fadeInRight'
+            },
+        hideClass: {
+            popup: 'animate__animated animate__fadeOutRight'
         },
-    hideClass: {
-        popup: 'animate__animated animate__fadeOutRight'
-    },
-    width: 450,
-    timerProgressBar: true,
-    didOpen: (toast) => {
-        toast.addEventListener('mouseenter', Swal.stopTimer)
-        toast.addEventListener('mouseleave', Swal.resumeTimer)
-    },
-    customClass: {
-        timerProgressBar: icon == 'success' ? 'green' : 'red' 
-    }
-  })
+        width: 450,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+            toast.addEventListener('mouseenter', Swal.stopTimer)
+            toast.addEventListener('mouseleave', Swal.resumeTimer)
+        },
+        customClass: {
+            //timerProgressBar: 'green'
+            timerProgressBar: icon == 'success' ? 'green' : 'red',
+        }
+    })
   
     Toast.fire({
-      icon: icon,
-      title: title,
-      text: message
-  });
+        icon: icon,
+        title: title,
+        text: message
+    });
 }
 
 
