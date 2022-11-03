@@ -1,0 +1,21 @@
+body{
+    background: #f1f1f1;
+}
+
+.btnSuccess{
+    background-color: rgb(47, 255, 75) !important;
+}
+
+
+
+.btnClose{
+    background-color: rgb(245, 83, 55) !important;
+}
+
+.green{
+    background-color: rgb(39, 207, 39);
+}
+
+.red {
+    background-color: rgb(245, 83, 55);
+}
